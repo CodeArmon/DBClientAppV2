@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reports">
+   <children>
+      <Label layoutX="343.0" layoutY="14.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="appointmentComboBox" layoutX="470.0" layoutY="61.0" onAction="#onSelectAppointmentID" prefHeight="25.0" prefWidth="174.0" promptText="Select an Appointment" />
+      <Button fx:id="viewReportButton" layoutX="476.0" layoutY="204.0" mnemonicParsing="false" onAction="#reportSubmit" text="View Report" />
+      <Button fx:id="backButton" layoutX="618.0" layoutY="455.0" mnemonicParsing="false" onAction="#onToMain" text="Cancel" />
+      <TableView fx:id="customerScheduleTable" layoutX="34.0" layoutY="239.0" prefHeight="200.0" prefWidth="631.0">
+        <columns>
+          <TableColumn fx:id="AppointmentIDColumn" prefWidth="147.0" text="Appointment ID" />
+          <TableColumn fx:id="TitleColumn" prefWidth="36.0" text="Title" />
+            <TableColumn fx:id="DescriptionColumn" prefWidth="100.0" text="Description" />
+            <TableColumn fx:id="TypeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="StartColumn" prefWidth="76.0" text="Start" />
+            <TableColumn fx:id="EndColumn" prefWidth="81.0" text="End" />
+            <TableColumn fx:id="CustomerIDColumn" prefWidth="149.0" text="Customer ID" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="contactComboBox" layoutX="313.0" layoutY="204.0" prefWidth="150.0" promptText="Select a Contact" />
+      <ComboBox fx:id="typeComboBox" layoutX="84.0" layoutY="48.0" onAction="#populateTypeReport" prefWidth="150.0" promptText="Select a Type" />
+      <TableView fx:id="typeTableView" layoutX="52.0" layoutY="80.0" prefHeight="149.0" prefWidth="214.0">
+        <columns>
+          <TableColumn fx:id="countColumn" prefWidth="110.0" text="Count" />
+          <TableColumn fx:id="monthColumn" prefWidth="103.0" text="Month" />
+        </columns>
+      </TableView>
+      <Button fx:id="typeResultsButton" layoutX="248.0" layoutY="48.0" mnemonicParsing="false" onAction="#onTypeResults" text="Type Results" />
+      <TextField fx:id="pricePerHourTextField" layoutX="565.0" layoutY="99.0" prefHeight="25.0" prefWidth="83.0" />
+      <Label layoutX="470.0" layoutY="103.0" text="Price/Hour" />
+      <Label layoutX="445.0" layoutY="138.0" text="Appointment Cost $" />
+      <TextField fx:id="totalCostTextField" layoutX="565.0" layoutY="134.0" prefHeight="25.0" prefWidth="83.0" />
+      <Button fx:id="calculateButton" layoutX="583.0" layoutY="172.0" mnemonicParsing="false" onAction="#onCalculate" text="Calculate" />
+   </children>
+</AnchorPane>
