@@ -140,7 +140,7 @@ public class LoginScreen implements Initializable {
                 //create and Open File
                 int tempID = 0;
                 Users user = new Users(logUser, logPass);
-                tempID = user.getUserID(logUser);
+                tempID= user.getUserID(logUser);
 
               //  for (int i = 0; i < AppointmentQuery.getAllAppointments().size(); i++) {
                     for (Appointment appointment : AppointmentQuery.fetchUpcomingAppointments(tempID)) {
